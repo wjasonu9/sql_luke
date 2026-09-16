@@ -1,5 +1,5 @@
 /* Query 1: What are the top paying Data Analyst jobs?
-Find the top 16 highest paying Data Analyst jobs available remotely.
+Find the top 20 highest paying Data Analyst jobs available remotely.
 Remove job postings with missing salary (no way to know if they are top paying).
 This will be useful when we later investigate optimal skills.
 Try different job titles and locations. */
@@ -11,7 +11,7 @@ FROM job_postings_fact FULL JOIN company_dim ON job_postings_fact.company_id=com
 WHERE job_title_short='Data Analyst' AND job_location='Anywhere' AND 
     salary_year_avg IS NOT NULL
 ORDER BY salary_year_avg DESC
-LIMIT 16;
+LIMIT 20;
 
 SELECT *
 FROM top_paying_jobs;
